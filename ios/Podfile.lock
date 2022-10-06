@@ -374,6 +374,8 @@ PODS:
     - React-jsi (= 0.70.0)
     - React-logger (= 0.70.0)
     - React-perflogger (= 0.70.0)
+  - RNSVG (12.1.1):
+    - React
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -595,6 +597,6 @@ SPEC CHECKSUMS:
   Yoga: 82c9e8f652789f67d98bed5aef9d6653f71b04a9
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 9bdff8fc8f884cab6302a447471bf8edfe3bebca
+PODFILE CHECKSUM: f8f4c7c7533e8c9271854b86d98c197452f83bd1
 
 COCOAPODS: 1.11.3

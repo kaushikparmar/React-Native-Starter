@@ -1,11 +1,11 @@
 import { NativeBaseProvider } from 'native-base';
 import React, { useEffect } from 'react';
-import { SafeAreaView, ScrollView, StatusBar, useColorScheme, View } from 'react-native';
+import { SafeAreaView, ScrollView, StatusBar, Text, useColorScheme, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { Section } from './screens/section/section';
 import SplashScreen from 'react-native-splash-screen';
 import { forceCheckUpdateNeeded } from './store/ForceUpdate';
 import ErrorBoundary from 'react-native-error-boundary';
+import { ErrorFallbackWidget } from './screens/section/ErrorFallbackWidget';
 
 export const App: React.FC = () => {
 
@@ -24,10 +24,6 @@ export const App: React.FC = () => {
     forceCheckUpdateNeeded();
   }, []);
 
-  const ErrorFallbackHandler = ({ error, resetErrorBoundary}: any) => {
-    return <View  /> //TODO: Error Fallback screen
-  }
-
   const myErrorHandler = (error: Error, stackTrace: string) => {
     console.log('ErrorHandler', error);
   }
@@ -40,9 +36,9 @@ export const App: React.FC = () => {
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
         />
-        <ErrorBoundary FallbackComponent={ErrorFallbackHandler} onError={myErrorHandler}>
+        <ErrorBoundary FallbackComponent={ErrorFallbackWidget} onError={myErrorHandler}>
           <ScrollView >
-            <Section title="Hello World"></Section>
+            <Text>Hello World</Text>
           </ScrollView>
         </ErrorBoundary>
       </SafeAreaView>
